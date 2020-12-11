@@ -1,37 +1,25 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Neon Power Blitz</title>
-  <link rel="stylesheet" href="TemplateData/style.css">
-  <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-
-</head>
-
-<body class="template container" id="unity">
-  <p class="header">Neon Power Blitz </p>
-  <div class="template-wrap clear">
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="720px"
-      width="1280px"></canvas>
-    <br>
-    <div class="title">Neon Power Blitz <span style="font-size: 0.75rem;">(Press Esc To Skip Intro)</span></div>
-  </div>
-  <p class="footer">&laquo; created with <a href="http://unity3d.com/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-
-</body>
-<script type='text/javascript'>
-  var Module = {
-    TOTAL_MEMORY: 536870912,
-    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    dataUrl: "Release/NPB Web 2.0.data",
-    codeUrl: "Release/NPB Web 2.0.js",
-    memUrl: "Release/NPB Web 2.0.mem",
-  };
-</script>
-<script src="Release/UnityLoader.js"></script>
-<script src="TemplateData/UnityProgress.js"></script>
-
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Neon Power Blitz</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/NPB-WEB.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 1280px; height: 720px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Neon Power Blitz</div>
+      </div>
+    </div>
+  </body>
 </html>
